@@ -84,8 +84,29 @@ python_functions = test_*
 addopts = -v
 ```
 
+## Chạy Các Bài Kiểm Thử
+
+### Thực thi từ Dòng lệnh
+Để chạy tất cả các bài kiểm thử, hãy điều hướng đến thư mục dự án và chạy:
+   ```bash
+   pytest <tên_tệp_script_của_bạn>.py
+   ```
+
+### Tạo Báo cáo Kiểm thử HTML trong Python
+Để tạo báo cáo HTML cho một bài kiểm thử Selenium, bạn cần cài đặt một plugin bằng lệnh: 
+```bash
+pip install pytest-html
+```
+Để tạo báo cáo, hãy di chuyển từ thư mục hiện tại đến thư mục chứa tệp Pytest mà bạn muốn thực thi. Sau đó, chạy lệnh: 
+```bash
+pytest --html=report.html
+```
+
+Sau khi lệnh này được thực thi thành công, một tệp mới có tên `report.html` sẽ được tạo trong thư mục dự án.​14:08/-strong/-heart:>:o:-((:-h Xem trước khi gửiThả Files vào đây để xem lại trước khi gửi
+
 ## Contact
 	* Email - Your Email
 	* Project Link: LINK GITHUB
+
 
 --- THE END ---
