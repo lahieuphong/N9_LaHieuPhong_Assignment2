@@ -20,13 +20,16 @@ pip install webdriver-manager
 
 ## Project Structure
 	selenium_tests/
-	├── chrome_1_login_logout.py
-	├── chrome_2_form_submission.py
-	├── chrome_3_navigation.py
-	├── chrome_4_data_validation.py
-	├── chrome_5_error_handling.py
-	├── chrome_6_search_functionality.py
-	├── chrome_7_responsive_design.py
+	├── assets/
+ 		style.css
+ 	├── report.html
+	├── test_1_login_logout.py
+	├── test_2_form_submission.py
+	├── test_3_navigation.py
+	├── test_4_data_validation.py
+	├── test_5_error_handling.py
+	├── test_6_search_functionality.py
+	├── test_7_responsive_design.py
 	└── requirements.txt
 
 ##	Setting Up Test Environment
