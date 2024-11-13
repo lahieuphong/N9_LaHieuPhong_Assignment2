@@ -88,7 +88,7 @@ Password: 21112003
 	Create a pytest.ini file in the project root:
 ```ini
 [pytest]
-python_files = chrome_*.py
+python_files = test_*.py
 python_functions = test_*
 addopts = -v
 ```
