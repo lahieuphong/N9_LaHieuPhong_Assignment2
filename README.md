@@ -62,13 +62,13 @@ Password: 21112003
 	Ensure OpenCart is running at http://localhost/demo/ before running tests
 	Tests include intentional delays (time.sleep()) for demonstration purposes
 	Each test file focuses on specific functionality:
-		chrome_1: Login/Logout functionality
-		chrome_2: Contact form submission
-		chrome_3: Navigation testing
-		chrome_4: Data validation
-		chrome_5: Error handling
-		chrome_6: Search functionality
-		chrome_7: Responsive design testing
+		test_1: Login/Logout functionality
+		test_2: Contact form submission
+		test_3: Navigation testing
+		test_4: Data validation
+		test_5: Error handling
+		test_6: Search functionality
+		test_7: Responsive design testing
 
 ## Troubleshooting
 	1. ChromeDriver Error: If you get a ChromeDriver error, ensure Chrome browser is up to date
@@ -84,29 +84,29 @@ python_functions = test_*
 addopts = -v
 ```
 
-## Chạy Các Bài Kiểm Thử
+## Running Tests
 
-### Thực thi từ Dòng lệnh
-Để chạy tất cả các bài kiểm thử, hãy điều hướng đến thư mục dự án và chạy:
+### Execute from Command Line
+To run all the tests, navigate to the project folder and run:
    ```bash
-   pytest <tên_tệp_script_của_bạn>.py
+   pytest <your_script_file_name>.py
    ```
 
-### Tạo Báo cáo Kiểm thử HTML trong Python
-Để tạo báo cáo HTML cho một bài kiểm thử Selenium, bạn cần cài đặt một plugin bằng lệnh: 
+### Generate HTML Test Report in Python
+To generate an HTML report for a Selenium test, you need to install a plugin by running the command:
 ```bash
 pip install pytest-html
 ```
-Để tạo báo cáo, hãy di chuyển từ thư mục hiện tại đến thư mục chứa tệp Pytest mà bạn muốn thực thi. Sau đó, chạy lệnh: 
+To create the report, move from the current directory to the directory containing the Pytest file you want to execute. Then, run the command:
 ```bash
 pytest --html=report.html
 ```
 
-Sau khi lệnh này được thực thi thành công, một tệp mới có tên `report.html` sẽ được tạo trong thư mục dự án.​14:08/-strong/-heart:>:o:-((:-h Xem trước khi gửiThả Files vào đây để xem lại trước khi gửi
+Once this command is successfully executed, a new file named report.html will be created in the project folder.
 
 ## Contact
-	* Email - Your Email
-	* Project Link: LINK GITHUB
+	* Email - hieuphong144@gmail.com
+	* Project Link: https://github.com/lahieuphong/N9_LaHieuPhong_Assignment2
 
 
 --- THE END ---
