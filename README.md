@@ -40,8 +40,8 @@ pip install webdriver-manager
 
 ##	Running Tests
 ### Method 1: Running Individual Test Files
-	1. Right-click on any test file (e.g., chrome_1_login_logout.py)
-	2. Select "Run 'pytest in chrome_1...'"
+	1. Right-click on any test file (e.g., test_1_login_logout.py)
+	2. Select "Run 'pytest in test_1...'"
 ### Method 2: Running from Terminal
 	1. Open PyCharm terminal
 	2. Navigate to the project directory
