@@ -98,7 +98,7 @@ addopts = -v
 ### Execute from Command Line
 To run all the tests, navigate to the project folder and run:
    ```bash
-   pytest <your_script_file_name>.py
+   pytest N9_LaHieuPhong_Assignment2
    ```
 
 ### Generate HTML Test Report in Python
