@@ -47,7 +47,13 @@ pip install webdriver-manager
 	2. Navigate to the project directory
 	3. Run individual test files:
 ```bash
-pytest chrome_1_login_logout.py -v
+pytest test_1_login_logout.py -v
+pytest test_2_form_submission.py -v
+pytest test_3_navigation.py -v
+pytest test_4_data_validation.py -v
+pytest test_5_error_handling.py -v
+pytest test_6_search_functionality.py -v
+pytest test_7_responsive_design.py -v
 ```
 ### Method 3: Running All Tests
 	To run all test files:
