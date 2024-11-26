@@ -22,7 +22,9 @@ pip install webdriver-manager
 	selenium_tests/
 	├── assets/
  		style.css
+   	├── all_links_status_report.txt
  	├── report.html
+  	├── requirements.txt
 	├── test_1_login_logout.py
 	├── test_2_form_submission.py
 	├── test_3_navigation.py
@@ -30,7 +32,7 @@ pip install webdriver-manager
 	├── test_5_error_handling.py
 	├── test_6_search_functionality.py
 	├── test_7_responsive_design.py
-	└── requirements.txt
+	└── test_all_links_status_report.py
 
 ##	Setting Up Test Environment
 	1. Open PyCharm and go to File > Settings > Project > Python Interpreter
@@ -54,6 +56,7 @@ pytest test_4_data_validation.py -v
 pytest test_5_error_handling.py -v
 pytest test_6_search_functionality.py -v
 pytest test_7_responsive_design.py -v
+pytest test_all_links_status_report.py -v
 ```
 ### Method 3: Running All Tests
 	To run all test files:
@@ -78,6 +81,7 @@ Password: 21112003
 		test_5: Error handling
 		test_6: Search functionality
 		test_7: Responsive design testing
+  		test_links: All links status report
 
 ## Troubleshooting
 	1. ChromeDriver Error: If you get a ChromeDriver error, ensure Chrome browser is up to date
