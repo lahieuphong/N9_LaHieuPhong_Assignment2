@@ -211,3 +211,5 @@ def test_check_ui_on_large_screen(chrome_driver, width, height):
     assert body_scroll_height_after <= max_allowed_height, \
         f"Sau khi cuộn, trang vẫn bị kéo dài quá nhiều ngoài vùng hiển thị. " \
         f"Chiều cao trang: {body_scroll_height_after}, Giới hạn cho phép: {max_allowed_height}"
+
+    time.sleep(5)
