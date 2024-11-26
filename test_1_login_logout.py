@@ -289,7 +289,7 @@ def test_lost_session_when_navigating_back_from_order_creation(chrome_driver):
     # Find and click on the 'Return' button
     print("Step 5: Clicking on the 'Return' button to initiate a return request...")
     return_button = chrome_driver.find_element(By.CSS_SELECTOR, "a.btn.btn-danger")
-    return_button.click()
+    chrome_driver.execute_script("arguments[0].click();", return_button)
     time.sleep(2)  # wait for the return page to load
 
     # Check if we are on the return page
@@ -310,3 +310,5 @@ def test_lost_session_when_navigating_back_from_order_creation(chrome_driver):
     # Check if we're redirected to the login page
     assert "login" in chrome_driver.current_url, "Session should be lost and redirected to login page"
     print(f"Redirected to login page. Current URL: {chrome_driver.current_url}")
+
+    time.sleep(5)
