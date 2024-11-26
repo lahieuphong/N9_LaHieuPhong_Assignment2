@@ -1,6 +1,9 @@
-import time
 import random
+import time
 import pytest
+import urllib
+import urllib.parse
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -18,6 +21,53 @@ def chrome_driver():
     yield driver
     # Quit the driver after test
     driver.quit()
+
+
+def test_navigate_to_sitemap_page(chrome_driver):
+    print("Step 1: Navigate to the homepage")
+    # Step 1: Navigate to the homepage
+    chrome_driver.get("http://localhost/demo/index.php?route=common/home&language=en-gb")
+    print("Homepage loaded.")
+
+    # Step 2: Scroll down to the bottom of the page
+    print("Step 2: Scroll down to the bottom of the page")
+    chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    time.sleep(2)  # Wait for the page to finish scrolling
+    print("Page scrolled to the bottom.")
+
+    # Step 3: Find the "Site Map" link at the bottom of the page and click it
+    print("Step 3: Find and click the 'Site Map' link")
+    try:
+        site_map_link = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.LINK_TEXT, "Site Map"))
+        )
+        site_map_link.click()
+        print("'Site Map' link clicked.")
+    except NoSuchElementException:
+        pytest.fail("Site Map link not found")
+
+    # Step 4: Verify the URL has changed to the sitemap page
+    print("Step 4: Verify the URL has changed to the sitemap page")
+    expected_url = "http://localhost/demo/index.php?route=information/sitemap&language=en-gb"
+    WebDriverWait(chrome_driver, 10).until(EC.url_to_be(expected_url))
+    print("URL changed to: " + chrome_driver.current_url)
+
+    # Step 5: Verify the URL is correct
+    print("Step 5: Verify the URL is correct")
+    assert chrome_driver.current_url == expected_url, f"Expected URL {expected_url}, but got {chrome_driver.current_url}"
+    print("URL is correct.")
+
+    # Step 6: Verify the page title
+    print("Step 6: Verify the page title contains 'Site Map'")
+    page_title = chrome_driver.title
+    assert "Site Map" in page_title, f"Expected 'Site Map' in the page title, but got {page_title}"
+    print("Page title verified.")
+
+    # Optional Step: Scroll halfway down on the sitemap page
+    print("Step 7: Scroll halfway down the sitemap page")
+    chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight / 3);")
+    time.sleep(5)
+    print("Page scrolled halfway down.")
 
 
 def test_navigate_to_random_product_detail_chrome(chrome_driver):
@@ -103,6 +153,7 @@ def test_navigate_to_empty_cart_chrome(chrome_driver):
     print("Dropdown message is present: " + dropdown_message.text)
 
 
+
 def add_product_to_cart(chrome_driver, product_url, quantity):
     # Step 1: Navigate to the product page
     chrome_driver.get(product_url)
@@ -159,7 +210,7 @@ def test_navigate_to_shopping_cart(chrome_driver):
     ]
 
     for product_url in product_urls:
-        random_quantity = random.randint(1, 5)
+        random_quantity = random.randint(5, 10)
         add_product_to_cart(chrome_driver, product_url, random_quantity)
 
     # Step 2: Click on the shopping cart icon to view the cart
@@ -230,131 +281,293 @@ def test_navigate_to_shopping_cart(chrome_driver):
     # remove_all_products_from_cart(chrome_driver)
 
 
-def test_navigate_to_checkout(chrome_driver):
-    # Step 1: Truy cập trang sản phẩm Canon EOS 5D
-    product_url = "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=30"
-    chrome_driver.get(product_url)
-    print(f"Accessed product page: {product_url}")
 
-    # Step 2: Chọn màu ngẫu nhiên (Red hoặc Blue) từ dropdown
-    try:
-        color_select = WebDriverWait(chrome_driver, 10).until(
-            EC.presence_of_element_located((By.ID, "input-option-226"))
-        )
-        random_color = random.choice([15, 16])  # Red = 15, Blue = 16
-        color_select.click()
-        color_select.find_element(By.XPATH, f"//option[@value='{random_color}']").click()
-        print(f"Selected color: {'Red' if random_color == 15 else 'Blue'}")
-    except Exception as e:
-        print("Error while selecting color:", e)
+def login_success_chrome(chrome_driver):
+    # Go to the login page
+    chrome_driver.get("http://localhost/demo/index.php?route=account/login&language=en-gb")
+    time.sleep(2)  # Wait for the page to load
+    print("\nNavigated to login page.")
 
-    # Step 3: Chọn số lượng ngẫu nhiên từ 1 đến 5
-    try:
-        quantity_field = WebDriverWait(chrome_driver, 10).until(
+    # Input email
+    email_input = chrome_driver.find_element(By.ID, "input-email")
+    email_input.send_keys("hieuphong144@gmail.com")
+    time.sleep(1)
+    print("Entered email.")
+
+    # Input password
+    password_input = chrome_driver.find_element(By.ID, "input-password")
+    password_input.send_keys("21112003")
+    time.sleep(1)
+    print("Entered password.")
+
+    # Click login button
+    login_button = chrome_driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
+    login_button.click()
+    time.sleep(3)  # Wait for login to process
+    print("Clicked login button.")
+
+    # Assert no error alert is displayed
+    error_alert = chrome_driver.find_elements(By.CSS_SELECTOR, ".alert.alert-danger")
+    assert not error_alert, "Login failed with valid credentials!"
+    print("No error alert found; login should be successful.")
+
+    # Capture the current URL after login
+    current_url = chrome_driver.current_url
+    print(f"Current URL after login: {current_url}")
+
+    # Assert that the current URL contains the account route
+    assert "route=account/account" in current_url, \
+        f"Expected to be redirected to account page, but was redirected to {current_url}!"
+
+    # Extract the customer_token from the URL
+    parsed_url = urllib.parse.urlparse(current_url)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
+    customer_token = query_params.get('customer_token', [None])[0]
+
+    assert customer_token is not None, "Customer token not found in the URL!"
+    print("Successfully redirected to account page with a valid customer token.")
+
+    # Navigate back to the main page and verify
+    logo = chrome_driver.find_element(By.CSS_SELECTOR, "img[title='Your Store']")
+    logo.click()
+    time.sleep(3)  # Wait for the main page to load
+    print("Clicked on the logo to go back to the home page.")
+
+    # Check that we're on the home page with logged-in status
+    assert chrome_driver.current_url == "http://localhost/demo/index.php?route=common/home&language=en-gb", \
+        "Failed to return to the home page with logged-in status!"
+    print("Returned to the home page successfully.")
+
+    print("\n----------------------------------\n")
+
+def navigate_to_checkout(chrome_driver):
+    login_success_chrome(chrome_driver)  # Ensure user is logged in
+
+    # Product details for testing
+    products = [
+        {
+            "url": "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=43",
+            "name": "MacBook",
+        },
+        {
+            "url": "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=40",
+            "name": "iPhone",
+        },
+    ]
+
+    for product in products:
+        # Access the product page
+        chrome_driver.get(product["url"])
+        WebDriverWait(chrome_driver, 10).until(
             EC.presence_of_element_located((By.ID, "input-quantity"))
         )
-        random_quantity = random.randint(1, 5)
-        quantity_field.clear()  # Clear the current value
-        quantity_field.send_keys(str(random_quantity))  # Enter random quantity
-        print(f"Selected quantity: {random_quantity}")
-    except Exception as e:
-        print("Error while selecting quantity:", e)
+        print(f"Accessed product page: {product['url']}")
 
-    # Step 4: Nhấn nút "Add to Cart"
-    try:
-        add_to_cart_button = WebDriverWait(chrome_driver, 10).until(
-            EC.element_to_be_clickable((By.ID, "button-cart"))
-        )
-        # Scroll to the "Add to Cart" button to ensure it's in view
-        chrome_driver.execute_script("arguments[0].scrollIntoView(true);", add_to_cart_button)
-        time.sleep(1)  # Optional pause to ensure the element is scrolled into view
+        # Random quantity from 1 to 10
+        random_quantity = random.randint(1, 10)
+        quantity_field = chrome_driver.find_element(By.ID, "input-quantity")
+        quantity_field.clear()  # Clear the field before entering new quantity
+        quantity_field.send_keys(str(random_quantity))
+        print(f"Selected quantity: {random_quantity} for {product['name']}")
 
+        # Click "Add to Cart" button
+        add_to_cart_button = chrome_driver.find_element(By.ID, "button-cart")
         add_to_cart_button.click()
-        print("Clicked 'Add to Cart' button.")
+        print(f"Clicked 'Add to Cart' button for {product['name']}")
+
+        # Wait for and verify the success message
+        try:
+            success_message_element = WebDriverWait(chrome_driver, 10).until(
+                EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
+            )
+            success_message = success_message_element.text
+            expected_message = f"Success: You have added {product['name']} to your shopping cart!"
+            assert expected_message in success_message, \
+                f"Unexpected success message for {product['name']}: {success_message}"
+            print(f"Success message verified for {product['name']}: {success_message}")
+        except Exception as e:
+            print(f"Error while verifying success message for {product['name']}: {e}")
+
+    print("\n----------------------------------\n")
+
+def test_navigate_to_checkout_and_complete_order(chrome_driver):
+    navigate_to_checkout(chrome_driver)
+
+    # Step 1: Clicking the Checkout link
+    try:
+        WebDriverWait(chrome_driver, 10).until(
+            EC.invisibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
+        )
+        print("Success message disappeared, ready to click checkout.")
+
+        # Click the Checkout link
+        checkout_link = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "a[title='Checkout']"))
+        )
+        checkout_link.click()
+        print("Clicked the 'Checkout' link")
+
+        # Wait for the checkout page to load (use more flexible URL check)
+        WebDriverWait(chrome_driver, 10).until(
+            EC.url_contains("route=checkout/checkout")
+        )
+        print(f"Successfully navigated to the cart page: {chrome_driver.current_url}")
+
+        # Wait for the shipping address dropdown to be visible and select the address
+        WebDriverWait(chrome_driver, 10).until(
+            EC.presence_of_element_located((By.ID, "input-shipping-address"))
+        )
+        print("Shipping address dropdown is visible.")
+
+    except Exception as e:
+        print(f"Error while navigating to checkout: {e}")
+
+    print("----------------------------------")
+
+    # Step 2: Select Shipping Address
+    try:
+        shipping_address_dropdown = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "input-shipping-address"))
+        )
+        shipping_address_dropdown.click()
+        shipping_address_option = chrome_driver.find_element(By.XPATH, "//option[@value='1']")
+        shipping_address_option.click()
+        print("Selected shipping address.")
 
         # Wait for success message
         WebDriverWait(chrome_driver, 10).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "#alert .alert-success"))
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
         )
+        print("Shipping address successfully changed.")
     except Exception as e:
-        print("Error while clicking 'Add to Cart' button:", e)
+        print("Error while selecting shipping address:", e)
 
-    # Step 5: Kiểm tra thông báo thành công
+    print("----------------------------------")
+
+    # Step 3: Choose Shipping Method
     try:
-        success_message = chrome_driver.find_element(By.CSS_SELECTOR, "#alert .alert-success").text
-        print("Success message:", success_message)
-    except Exception as e:
-        print("Error while verifying success message:", e)
-
-    # Step 6: Cuộn lên đầu trang và nhấn nút "Checkout"
-    try:
-        # Scroll to the top of the page before clicking the Checkout button
-        chrome_driver.execute_script("window.scrollTo(0, 0);")
-        print("Scrolled to the top of the page.")
-        time.sleep(10)  # Wait for any potential animations to finish
-
-        # Wait for the Checkout button to be clickable and then click
-        checkout_button = WebDriverWait(chrome_driver, 10).until(
-            EC.element_to_be_clickable((By.CSS_SELECTOR, "li.list-inline-item a[href*='route=checkout/checkout']"))
+        # Wait for the 'Choose' button to be clickable
+        choose_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "button-shipping-methods"))
         )
-        checkout_button.click()
-        print("Clicked 'Checkout' button. Redirecting to checkout page.")
+        choose_button.click()
+        print("Clicked the 'Choose' button for shipping method.")
 
-        # Wait for the checkout page to load by verifying that the URL contains 'checkout/checkout'
+        # Optionally wait for confirmation or success message (if any)
         WebDriverWait(chrome_driver, 10).until(
-            EC.url_contains("checkout/checkout")
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
         )
-        print("Successfully redirected to the checkout page.")
+        print("Shipping method successfully chosen.")
+
+        # Wait for the shipping method radio button to be clickable
+        shipping_method_radio_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "input-shipping-method-flat-flat"))
+        )
+        # Click the radio button to select the shipping method
+        shipping_method_radio_button.click()
+        print("Selected shipping method.")
+
+        # Wait for the 'Continue' button to be clickable
+        continue_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "button-shipping-method"))
+        )
+        # Click the 'Continue' button
+        continue_button.click()
+        print("Clicked the 'Continue' button for shipping method.")
+
+        # Optionally, wait for a confirmation or success message that the shipping method has been applied
+        WebDriverWait(chrome_driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
+        )
+        print("Shipping method applied and confirmed.")
+
     except Exception as e:
-        print("Error while clicking 'Checkout' button:", e)
+        print("Error while selecting shipping method or continuing:", e)
 
-    chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight / 2);")
+    print("----------------------------------")
 
-    time.sleep(5)
-
-
-def test_navigate_to_sitemap_page(chrome_driver):
-    print("Step 1: Navigate to the homepage")
-    # Step 1: Navigate to the homepage
-    chrome_driver.get("http://localhost/demo/index.php?route=common/home&language=en-gb")
-    print("Homepage loaded.")
-
-    # Step 2: Scroll down to the bottom of the page
-    print("Step 2: Scroll down to the bottom of the page")
-    chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(2)  # Wait for the page to finish scrolling
-    print("Page scrolled to the bottom.")
-
-    # Step 3: Find the "Site Map" link at the bottom of the page and click it
-    print("Step 3: Find and click the 'Site Map' link")
+    # Step 4: Choose Payment Method
     try:
-        site_map_link = WebDriverWait(chrome_driver, 10).until(
-            EC.element_to_be_clickable((By.LINK_TEXT, "Site Map"))
+        # Wait for the 'Choose' button to be clickable
+        choose_payment_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "button-payment-methods"))
         )
-        site_map_link.click()
-        print("'Site Map' link clicked.")
-    except NoSuchElementException:
-        pytest.fail("Site Map link not found")
+        choose_payment_button.click()
+        print("Clicked the 'Choose' button for payment method.")
 
-    # Step 4: Verify the URL has changed to the sitemap page
-    print("Step 4: Verify the URL has changed to the sitemap page")
-    expected_url = "http://localhost/demo/index.php?route=information/sitemap&language=en-gb"
-    WebDriverWait(chrome_driver, 10).until(EC.url_to_be(expected_url))
-    print("URL changed to: " + chrome_driver.current_url)
+        # Optionally wait for confirmation or success message (if any)
+        WebDriverWait(chrome_driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
+        )
+        print("Payment method successfully chosen.")
 
-    # Step 5: Verify the URL is correct
-    print("Step 5: Verify the URL is correct")
-    assert chrome_driver.current_url == expected_url, f"Expected URL {expected_url}, but got {chrome_driver.current_url}"
-    print("URL is correct.")
+        # Wait for the payment method radio button to be clickable
+        payment_method_radio_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "input-payment-method-cod-cod"))
+        )
+        # Click the radio button to select the payment method (e.g., COD)
+        payment_method_radio_button.click()
+        print("Selected payment method.")
 
-    # Step 6: Verify the page title
-    print("Step 6: Verify the page title contains 'Site Map'")
-    page_title = chrome_driver.title
-    assert "Site Map" in page_title, f"Expected 'Site Map' in the page title, but got {page_title}"
-    print("Page title verified.")
+        # Wait for the 'Continue' button to be clickable
+        continue_payment_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "button-payment-method"))
+        )
+        # Click the 'Continue' button
+        continue_payment_button.click()
+        print("Clicked the 'Continue' button for payment method.")
 
-    # Optional Step: Scroll halfway down on the sitemap page
-    print("Step 7: Scroll halfway down the sitemap page")
-    chrome_driver.execute_script("window.scrollTo(0, document.body.scrollHeight / 3);")
+        # Optionally, wait for a confirmation or success message that the payment method has been applied
+        WebDriverWait(chrome_driver, 10).until(
+            EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
+        )
+        print("Payment method applied and confirmed.")
+
+    except Exception as e:
+        print("Error while selecting payment method or continuing:", e)
+
+    print("----------------------------------")
+
+    # Step 5: Add Comments About Your Order
+    try:
+        time.sleep(2)
+
+        comment_field = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "input-comment"))
+        )
+
+        chrome_driver.execute_script("arguments[0].scrollIntoView(true);", comment_field)
+
+        comment_field.send_keys("Please double-check the item before shipping. Thanks!")
+        print("Comment added successfully.")
+
+    except Exception as e:
+        print(f"Error while adding comment: {e}")
+
+    print("----------------------------------")
+
+    # Step 6: Confirm Order
+    try:
+
+        confirm_button = WebDriverWait(chrome_driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "button-confirm"))
+        )
+
+        chrome_driver.execute_script("arguments[0].scrollIntoView(true);", confirm_button)
+        print("Scrolled to the 'Confirm Order' button.")
+
+        time.sleep(2)
+
+        actions = ActionChains(chrome_driver)
+        actions.move_to_element(confirm_button).click().perform()
+        print("Clicked the 'Confirm Order' button.")
+
+        WebDriverWait(chrome_driver, 10).until(
+            EC.url_to_be("http://localhost/demo/index.php?route=checkout/success&language=en-gb")
+        )
+        print(f"Successfully redirected to the success page: {chrome_driver.current_url}")
+
+    except Exception as e:
+        print(f"Error while confirming order: {e}")
+
     time.sleep(5)
-    print("Page scrolled halfway down.")
