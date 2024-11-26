@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title id="head-title">report.html</title>
+      <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <h1 id="title">report.html</h1>
+    <p>Report generated on 26-Nov-2024 at 23:47:19 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a>
+        v4.1.1</p>
+    <div id="environment-header">
+      <h2>Environment</h2>
+    </div>
+    <table id="environment"></table>
+    <!-- TEMPLATES -->
+      <template id="template_environment_row">
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+    <template id="template_results-table__body--empty">
+      <tbody class="results-table-row">
+        <tr id="not-found-message">
+          <td colspan="4">No results found. Check the filters.</th>
+        </tr>
+    </template>
+    <template id="template_results-table__tbody">
+      <tbody class="results-table-row">
+        <tr class="collapsible">
+        </tr>
+        <tr class="extras-row">
+          <td class="extra" colspan="4">
+            <div class="extraHTML"></div>
+            <div class="media">
+              <div class="media-container">
+                  <div class="media-container__nav--left"><</div>
+                  <div class="media-container__viewport">
+                    <img src="" />
+                    <video controls>
+                      <source src="" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="media-container__nav--right">></div>
+                </div>
+                <div class="media__name"></div>
+                <div class="media__counter"></div>
+            </div>
+            <div class="logwrapper">
+              <div class="logexpander"></div>
+              <div class="log"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </template>
+    <!-- END TEMPLATES -->
+    <div class="summary">
+      <div class="summary__data">
+        <h2>Summary</h2>
+        <div class="additional-summary prefix">
+        </div>
+        <p class="run-count">35 tests took 00:08:18.</p>
+        <p class="filter">(Un)check the boxes to filter the results.</p>
+        <div class="summary__reload">
+          <div class="summary__reload__button hidden" onclick="location.reload()">
+            <div>There are still tests running. <br />Reload this page to get the latest results!</div>
+          </div>
+        </div>
+        <div class="summary__spacer"></div>
+        <div class="controls">
+          <div class="filters">
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="failed" disabled/>
+            <span class="failed">0 Failed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="passed" />
+            <span class="passed">35 Passed,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="skipped" disabled/>
+            <span class="skipped">0 Skipped,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xfailed" disabled/>
+            <span class="xfailed">0 Expected failures,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="xpassed" disabled/>
+            <span class="xpassed">0 Unexpected passes,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="error" disabled/>
+            <span class="error">0 Errors,</span>
+            <input checked="true" class="filter" name="filter_checkbox" type="checkbox" data-test-result="rerun" disabled/>
+            <span class="rerun">0 Reruns</span>
+          </div>
+          <div class="collapse">
+            <button id="show_all_details">Show all details</button>&nbsp;/&nbsp;<button id="hide_all_details">Hide all details</button>
+          </div>
+        </div>
+      </div>
+      <div class="additional-summary summary">
+      </div>
+      <div class="additional-summary postfix">
+      </div>
+    </div>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable" data-column-type="result">Result</th>
+          <th class="sortable" data-column-type="testId">Test</th>
+          <th class="sortable" data-column-type="duration">Duration</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+  <footer>
+    <div id="data-container" data-jsonblob="{&#34;environment&#34;: {&#34;Python&#34;: &#34;3.12.5&#34;, &#34;Platform&#34;: &#34;macOS-15.1.1-arm64-arm-64bit&#34;, &#34;Packages&#34;: {&#34;pytest&#34;: &#34;8.3.3&#34;, &#34;pluggy&#34;: &#34;1.5.0&#34;}, &#34;Plugins&#34;: {&#34;html&#34;: &#34;4.1.1&#34;, &#34;metadata&#34;: &#34;3.1.1&#34;}, &#34;JAVA_HOME&#34;: &#34;/Users/lahieuphong/Documents/anaconda3&#34;}, &#34;tests&#34;: {&#34;test_1_login_logout.py::test_login_success_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_1_login_logout.py::test_login_success_chrome&#34;, &#34;duration&#34;: &#34;00:00:15&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_1_login_logout.py::test_login_success_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:15&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to login page.\nEntered email.\nEntered password.\nClicked login button.\nNo error alert found; login should be successful.\nCurrent URL after login: http://localhost/demo/index.php?route=account/account&amp;amp;language=en-gb&amp;amp;customer_token=01c2f6baf944c5f0cfb6aa1819\nSuccessfully redirected to account page with a valid customer token.\nClicked on the logo to go back to the home page.\nReturned to the home page successfully.\nOpened &amp;#x27;My Account&amp;#x27; dropdown.\nFound 5 items in the dropdown menu.\nLogin success confirmed. Dropdown contains expected 5 items.\n&#34;}], &#34;test_1_login_logout.py::test_login_failure_invalid_username_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_1_login_logout.py::test_login_failure_invalid_username_chrome&#34;, &#34;duration&#34;: &#34;00:00:14&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_1_login_logout.py::test_login_failure_invalid_username_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:14&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to login page.\nEntered incorrect email.\nEntered incorrect password.\nClicked login button.\nCorrect warning message found; login failed as expected. Alert message: Warning: No match for E-Mail Address and/or Password.\nClicked on the logo to go back to the home page.\nOpened &amp;#x27;My Account&amp;#x27; dropdown.\nFound 2 items in the dropdown menu.\nLogin failure confirmed. Dropdown contains expected 2 items.\n&#34;}], &#34;test_1_login_logout.py::test_login_failure_invalid_password_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_1_login_logout.py::test_login_failure_invalid_password_chrome&#34;, &#34;duration&#34;: &#34;00:00:14&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_1_login_logout.py::test_login_failure_invalid_password_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:14&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to login page.\nEntered incorrect email.\nEntered incorrect password.\nClicked login button.\nCorrect warning message found; login failed as expected. Alert message: Warning: No match for E-Mail Address and/or Password.\nClicked on the logo to go back to the home page.\nOpened &amp;#x27;My Account&amp;#x27; dropdown.\nFound 2 items in the dropdown menu.\nLogin failure confirmed. Dropdown contains expected 2 items.\n&#34;}], &#34;test_1_login_logout.py::test_logout_success_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_1_login_logout.py::test_logout_success_chrome&#34;, &#34;duration&#34;: &#34;00:00:23&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_1_login_logout.py::test_logout_success_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:23&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to login page.\nEntered email.\nEntered password.\nClicked login button.\nNo error alert found; login should be successful.\nCurrent URL after login: http://localhost/demo/index.php?route=account/account&amp;amp;language=en-gb&amp;amp;customer_token=ebe13197794a5019efdefe9695\nSuccessfully redirected to account page with a valid customer token.\nClicked on the logo to go back to the home page.\nReturned to the home page successfully.\nOpened &amp;#x27;My Account&amp;#x27; dropdown.\nFound 5 items in the dropdown menu.\nLogin success confirmed. Dropdown contains expected 5 items.\nClicked logout link.\nRedirected to logout page successfully.\nLogout confirmation header is present.\nLogout confirmation message is present.\nClicked &amp;#x27;Continue&amp;#x27; button.\nReturned to the home page successfully after logout.\nOpened &amp;#x27;My Account&amp;#x27; dropdown again.\nFound 2 items in the dropdown menu after logout.\nLogout success confirmed. Dropdown contains expected 2 items after logout.\n&#34;}], &#34;test_1_login_logout.py::test_lost_session_when_navigating_back_from_order_creation&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_1_login_logout.py::test_lost_session_when_navigating_back_from_order_creation&#34;, &#34;duration&#34;: &#34;00:00:30&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_1_login_logout.py::test_lost_session_when_navigating_back_from_order_creation&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:30&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nStep 1: Logging in...\nNavigated to login page.\nEntered email.\nEntered password.\nClicked login button.\nNo error alert found; login should be successful.\nCurrent URL after login: http://localhost/demo/index.php?route=account/account&amp;amp;language=en-gb&amp;amp;customer_token=8d3fbd65ecfcd8e997a505db7f\nSuccessfully redirected to account page with a valid customer token.\nClicked on the logo to go back to the home page.\nReturned to the home page successfully.\nOpened &amp;#x27;My Account&amp;#x27; dropdown.\nFound 5 items in the dropdown menu.\nLogin success confirmed. Dropdown contains expected 5 items.\nStep 2: Navigating to Order History page...\nNavigated to Order History page. Current URL: http://localhost/demo/index.php?route=account/order&amp;amp;language=en-gb&amp;amp;customer_token=8d3fbd65ecfcd8e997a505db7f\nStep 3: Clicking on the &amp;#x27;View&amp;#x27; button for order details...\nNavigated to Order Details page. Current URL: http://localhost/demo/index.php?route=account/order.info&amp;amp;language=en-gb&amp;amp;customer_token=8d3fbd65ecfcd8e997a505db7f&amp;amp;order_id=42\nStep 4: Scrolling down to ensure &amp;#x27;Return&amp;#x27; button is visible...\nStep 5: Clicking on the &amp;#x27;Return&amp;#x27; button to initiate a return request...\nNavigated to Return page. Current URL: http://localhost/demo/index.php?route=account/returns.add&amp;amp;language=en-gb&amp;amp;order_id=42&amp;amp;product_id=40\nStep 6: Scrolling down to ensure &amp;#x27;Back&amp;#x27; button is visible...\nStep 7: Clicking on the &amp;#x27;Back&amp;#x27; button to return to the previous page...\nRedirected to login page. Current URL: http://localhost/demo/index.php?route=account/login&amp;amp;language=en-gb\n&#34;}], &#34;test_2_form_submission.py::test_contact_form_submission_success_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_2_form_submission.py::test_contact_form_submission_success_chrome&#34;, &#34;duration&#34;: &#34;00:00:23&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_2_form_submission.py::test_contact_form_submission_success_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:23&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nStarting test_contact_form_submission...\nRedirected to contact success page successfully.\nContact success header is present.\nSuccess message is present.\nClicked &amp;#x27;Continue&amp;#x27; button to return to the home page.\nReturned to the home page successfully after contact form submission.\n&#34;}], &#34;test_2_form_submission.py::test_contact_form_submission_failure_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_2_form_submission.py::test_contact_form_submission_failure_chrome&#34;, &#34;duration&#34;: &#34;00:00:15&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_2_form_submission.py::test_contact_form_submission_failure_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:15&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to contact page.\nEntered name.\nEntered email.\nEntered enquiry message.\nClicked submit button.\nNo redirection to contact success page, as expected.\nName error message displayed: Name must be between 3 and 32 characters!\nEmail error message displayed: E-Mail Address does not appear to be valid!\nEnquiry error message displayed: Enquiry must be between 10 and 3000 characters!\n&#34;}], &#34;test_2_form_submission.py::test_submission_of_contact_form_with_special_characters_in_message&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_2_form_submission.py::test_submission_of_contact_form_with_special_characters_in_message&#34;, &#34;duration&#34;: &#34;00:00:19&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_2_form_submission.py::test_submission_of_contact_form_with_special_characters_in_message&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:19&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nRedirected to contact success page successfully.\nContact success header is present.\nSuccess message is present.\nClicked &amp;#x27;Continue&amp;#x27; button to return to the home page.\nReturned to the home page successfully after contact form submission.\nTesting complete with special characters in the message.\n&#34;}], &#34;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_email&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_email&#34;, &#34;duration&#34;: &#34;00:00:15&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_email&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:15&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to contact page.\nEntered name.\nEntered email.\nClicked submit button.\nNo redirection to contact success page, as expected.\nEmail error message displayed: E-Mail Address does not appear to be valid!\n&#34;}], &#34;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_name&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_name&#34;, &#34;duration&#34;: &#34;00:00:19&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_2_form_submission.py::test_contact_form_submission_with_special_characters_in_name&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:19&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nRedirected to contact success page successfully.\nContact success header is present.\nSuccess message is present.\nClicked &amp;#x27;Continue&amp;#x27; button to return to the home page.\nReturned to the home page successfully after contact form submission.\nUnexpected results\n&#34;}], &#34;test_3_navigation.py::test_navigate_to_sitemap_page&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_3_navigation.py::test_navigate_to_sitemap_page&#34;, &#34;duration&#34;: &#34;00:00:09&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_3_navigation.py::test_navigate_to_sitemap_page&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:09&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nStep 1: Navigate to the homepage\nHomepage loaded.\nStep 2: Scroll down to the bottom of the page\nPage scrolled to the bottom.\nStep 3: Find and click the &amp;#x27;Site Map&amp;#x27; link\n&amp;#x27;Site Map&amp;#x27; link clicked.\nStep 4: Verify the URL has changed to the sitemap page\nURL changed to: http://localhost/demo/index.php?route=information/sitemap&amp;amp;language=en-gb\nStep 5: Verify the URL is correct\nURL is correct.\nStep 6: Verify the page title contains &amp;#x27;Site Map&amp;#x27;\nPage title verified.\nStep 7: Scroll halfway down the sitemap page\nPage scrolled halfway down.\n&#34;}], &#34;test_3_navigation.py::test_navigate_to_random_product_detail_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_3_navigation.py::test_navigate_to_random_product_detail_chrome&#34;, &#34;duration&#34;: &#34;00:00:09&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_3_navigation.py::test_navigate_to_random_product_detail_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:09&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to homepage.\nScrolled to the selected product.\nClicked on a random product. Navigated to http://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=43\nSuccessfully navigated to the correct product detail page.\n&#34;}], &#34;test_3_navigation.py::test_navigate_to_empty_cart_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_3_navigation.py::test_navigate_to_empty_cart_chrome&#34;, &#34;duration&#34;: &#34;00:00:09&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_3_navigation.py::test_navigate_to_empty_cart_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:09&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to homepage.\nClicked on the shopping cart icon.\nShopping Cart header is present: Shopping Cart\nEmpty cart message is present: Your shopping cart is empty!\nHeader: Shopping Cart\nMessage: Your shopping cart is empty!\nCart button shows correct item count: 0 item(s) - $0.00\nDropdown message is present: Your shopping cart is empty!\n&#34;}], &#34;test_3_navigation.py::test_navigate_to_shopping_cart&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_3_navigation.py::test_navigate_to_shopping_cart&#34;, &#34;duration&#34;: &#34;00:00:35&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_3_navigation.py::test_navigate_to_shopping_cart&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:35&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nAdded 10 of the product at http://localhost/demo/index.php?route=product/product&amp;amp;path=20&amp;amp;product_id=40 to the cart. Message: Success: You have added iPhone to your shopping cart!\nAdded 8 of the product at http://localhost/demo/index.php?route=product/product&amp;amp;path=20&amp;amp;product_id=43 to the cart. Message: Success: You have added MacBook to your shopping cart!\nAdded 7 of the product at http://localhost/demo/index.php?route=product/product&amp;amp;path=20&amp;amp;product_id=49 to the cart. Message: Success: You have added Samsung Galaxy Tab 10.1 to your shopping cart!\nClicked on the shopping cart icon.\nClicked on &amp;#x27;View Cart&amp;#x27;.\nAlert detected: Product(s) not available in desired quantity.\nAlert dismissed.\nUser is redirected to the shopping cart page.\nShopping cart header is present on the page.\nClicked on the &amp;#x27;Checkout&amp;#x27; button.\n&#34;}], &#34;test_3_navigation.py::test_navigate_to_checkout_and_complete_order&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_3_navigation.py::test_navigate_to_checkout_and_complete_order&#34;, &#34;duration&#34;: &#34;00:00:39&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_3_navigation.py::test_navigate_to_checkout_and_complete_order&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:39&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\nNavigated to login page.\nEntered email.\nEntered password.\nClicked login button.\nNo error alert found; login should be successful.\nCurrent URL after login: http://localhost/demo/index.php?route=account/account&amp;amp;language=en-gb&amp;amp;customer_token=1c092345561370c3ed01b9ad71\nSuccessfully redirected to account page with a valid customer token.\nClicked on the logo to go back to the home page.\nReturned to the home page successfully.\n\n----------------------------------\n\nAccessed product page: http://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=43\nSelected quantity: 3 for MacBook\nClicked &amp;#x27;Add to Cart&amp;#x27; button for MacBook\nSuccess message verified for MacBook: Success: You have added MacBook to your shopping cart!\nAccessed product page: http://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=40\nSelected quantity: 5 for iPhone\nClicked &amp;#x27;Add to Cart&amp;#x27; button for iPhone\nSuccess message verified for iPhone: Success: You have added iPhone to your shopping cart!\n\n----------------------------------\n\nSuccess message disappeared, ready to click checkout.\nClicked the &amp;#x27;Checkout&amp;#x27; link\nSuccessfully navigated to the cart page: http://localhost/demo/index.php?route=checkout/checkout&amp;amp;language=en-gb\nShipping address dropdown is visible.\n----------------------------------\nSelected shipping address.\nShipping address successfully changed.\n----------------------------------\nClicked the &amp;#x27;Choose&amp;#x27; button for shipping method.\nShipping method successfully chosen.\nSelected shipping method.\nClicked the &amp;#x27;Continue&amp;#x27; button for shipping method.\nShipping method applied and confirmed.\n----------------------------------\nClicked the &amp;#x27;Choose&amp;#x27; button for payment method.\nPayment method successfully chosen.\nSelected payment method.\nClicked the &amp;#x27;Continue&amp;#x27; button for payment method.\nPayment method applied and confirmed.\n----------------------------------\nComment added successfully.\n----------------------------------\nScrolled to the &amp;#x27;Confirm Order&amp;#x27; button.\nClicked the &amp;#x27;Confirm Order&amp;#x27; button.\nSuccessfully redirected to the success page: http://localhost/demo/index.php?route=checkout/success&amp;amp;language=en-gb\n&#34;}], &#34;test_4_data_validation.py::test_dashboard_product_info&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_4_data_validation.py::test_dashboard_product_info&#34;, &#34;duration&#34;: &#34;00:00:22&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_4_data_validation.py::test_dashboard_product_info&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:22&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nAlert closed.\nSuccessfully logged in and redirected to dashboard.\nModal closed.\nScrolled to the bottom of the page.\n\nRecent Activity: No results found.\n----------------------------------------\nOrder ID: 43\nCustomer: La Hi\u1ec3u Phong\nStatus: Pending\nDate Added: 26/11/2024\nTotal: $2,010.00\n----------------------------------------\nOrder ID: 42\nCustomer: La Hi\u1ec3u Phong\nStatus: Pending\nDate Added: 26/11/2024\nTotal: $4,106.00\n----------------------------------------\nOrder ID: 41\nCustomer: La Hi\u1ec3u Phong\nStatus: Pending\nDate Added: 26/11/2024\nTotal: $4,212.00\n----------------------------------------\nOrder ID: 40\nCustomer: La Hi\u1ec3u Phong\nStatus: Pending\nDate Added: 26/11/2024\nTotal: $5,510.00\n----------------------------------------\nOrder ID: 39\nCustomer: La Hi\u1ec3u Phong\nStatus: Pending\nDate Added: 26/11/2024\nTotal: $5,611.00\n----------------------------------------\n&#34;}], &#34;test_4_data_validation.py::test_compare_product_info&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_4_data_validation.py::test_compare_product_info&#34;, &#34;duration&#34;: &#34;00:00:06&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_4_data_validation.py::test_compare_product_info&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:06&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nProduct Information:\nName: iPhone\nPrice: $123.20\nBrand: Brand: Apple\nProduct Code: Product Code: product 11\nAvailability: Availability: In Stock\nQuantity Added: 3\n\nItems in Shopping Cart:\nName: iPhone, Model: iPhone, Quantity: 3, Unit Price: $123.20, Total: $365.60\n\nComparing product details:\nName: iPhone vs Name: iPhone\nPrice: $123.20 vs Unit Price: $123.20\nQuantity Added: 3 vs Quantity: 3\nProduct name matches!\nProduct price matches!\nQuantities match!\n\n\nSub-Total: $303.00\nEco Tax (-2.00): $6.00\nVAT (20%): $60.60\nTotal: $369.60\n&#34;}], &#34;test_5_error_handling.py::test_contact_us_invalid_fields&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_5_error_handling.py::test_contact_us_invalid_fields&#34;, &#34;duration&#34;: &#34;00:00:22&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_5_error_handling.py::test_contact_us_invalid_fields&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:22&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nTest started: Navigating to the Contact Us page...\nScrolling the page halfway...\nPage scrolled halfway. Now starting to fill the form...\nChecking for error messages...\nName error message: Name must be between 3 and 32 characters!\nEmail error message: E-Mail Address does not appear to be valid!\nEnquiry error message: Enquiry must be between 10 and 3000 characters!\nTest completed successfully.\n&#34;}], &#34;test_5_error_handling.py::test_registration_invalid_fields&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_5_error_handling.py::test_registration_invalid_fields&#34;, &#34;duration&#34;: &#34;00:00:33&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_5_error_handling.py::test_registration_invalid_fields&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:33&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nTest started: Navigating to the Registration page...\nScrolling the page halfway...\nChecking for error messages...\nFirst Name error message: First Name must be between 1 and 32 characters!\nLast Name error message: Last Name must be between 1 and 32 characters!\nEmail error message: E-Mail Address does not appear to be valid!\nPassword error message: Password must be between 4 and 20 characters!\nTest completed successfully.\n&#34;}], &#34;test_5_error_handling.py::test_error_page_displayed_when_adding_product_to_cart_fails&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_5_error_handling.py::test_error_page_displayed_when_adding_product_to_cart_fails&#34;, &#34;duration&#34;: &#34;00:00:04&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_5_error_handling.py::test_error_page_displayed_when_adding_product_to_cart_fails&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:04&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to the product page.\nEntered the quantity: 2147483648\nClicked on &amp;#x27;Add to Cart&amp;#x27; button.\nSuccess message: Success: You have added MacBook to your shopping cart!\nCart button text: 2147483647 item(s) - $1,292,785,155,494.00\nVerified the cart button shows the expected number of items.\n&#34;}], &#34;test_5_error_handling.py::test_error_page_displayed_when_adding_product_with_negative_quantity&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_5_error_handling.py::test_error_page_displayed_when_adding_product_with_negative_quantity&#34;, &#34;duration&#34;: &#34;00:00:12&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_5_error_handling.py::test_error_page_displayed_when_adding_product_with_negative_quantity&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:12&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to the product page.\nEntered the quantity: -1\nClicked on &amp;#x27;Add to Cart&amp;#x27; button.\nError message did not appear within the wait time.\nCart button text: 0 item(s) - $0.00\nVerified the cart button shows &amp;#x27;0 item(s) - $0.00&amp;#x27; after attempting to add a negative quantity.\n&#34;}], &#34;test_6_search_functionality.py::test_search_macbook&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_6_search_functionality.py::test_search_macbook&#34;, &#34;duration&#34;: &#34;00:00:06&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_6_search_functionality.py::test_search_macbook&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:06&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to the homepage.\nEntered &amp;#x27;macbook&amp;#x27; into the search box.\nClicked the search button and navigated to the results page.\nVerified URL: http://localhost/demo/index.php?route=product/search&amp;amp;language=en-gb&amp;amp;search=macbook\nVerified heading: &amp;#x27;Search - macbook&amp;#x27;\nFound 3 product(s) in the search results for &amp;#x27;macbook&amp;#x27;.\nVerified product: &amp;#x27;MacBook&amp;#x27;\nProduct &amp;#x27;MacBook&amp;#x27; has a price of $602.00\nVerified product: &amp;#x27;MacBook Air&amp;#x27;\nProduct &amp;#x27;MacBook Air&amp;#x27; has a price of $1,202.00\nVerified product: &amp;#x27;MacBook Pro&amp;#x27;\nProduct &amp;#x27;MacBook Pro&amp;#x27; has a price of $2,000.00\n&#34;}], &#34;test_6_search_functionality.py::test_search_macbook_fail&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_6_search_functionality.py::test_search_macbook_fail&#34;, &#34;duration&#34;: &#34;00:00:09&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_6_search_functionality.py::test_search_macbook_fail&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:09&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nNavigated to the homepage.\nEntered &amp;#x27;macbok&amp;#x27; into the search box.\nClicked the search button and navigated to the results page.\nVerified URL: http://localhost/demo/index.php?route=product/search&amp;amp;language=en-gb&amp;amp;search=macbok\nVerified heading: &amp;#x27;Search - macbok&amp;#x27;\nVerified &amp;#x27;no product matches&amp;#x27; message: &amp;#x27;There is no product that matches the search criteria.&amp;#x27;\n&#34;}], &#34;test_7_responsive_design.py::test_open_home_page_chrome&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_open_home_page_chrome&#34;, &#34;duration&#34;: &#34;00:00:12&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_open_home_page_chrome&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:12&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\nTrang web \u0111\u00e3 m\u1edf th\u00e0nh c\u00f4ng!\nH\u00ecnh \u1ea3nh \u0111\u00e3 t\u1ea3i th\u00e0nh c\u00f4ng!\n&#34;}], &#34;test_7_responsive_design.py::test_open_home_page_firefox&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_open_home_page_firefox&#34;, &#34;duration&#34;: &#34;00:00:12&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_open_home_page_firefox&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:12&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nH\u00ecnh \u1ea3nh \u0111\u00e3 t\u1ea3i th\u00e0nh c\u00f4ng!\nTrang web \u0111\u00e3 m\u1edf th\u00e0nh c\u00f4ng!\n&#34;}], &#34;test_7_responsive_design.py::test_check_text_on_widgets&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_text_on_widgets&#34;, &#34;duration&#34;: &#34;00:00:06&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_text_on_widgets&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:06&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\nStarting test_check_text_on_widgets\n\nChecking elements for selector: button\n  - Element: button contains text: &amp;#x27;0 item(s) - $0.00&amp;#x27;\n\nChecking elements for selector: div\n  - Element: div contains text: &amp;#x27;$ Currency\n123456789\nMy Account\nWish List (0) Shopping Cart Checkout&amp;#x27;\n  - Element: div contains text: &amp;#x27;$ Currency&amp;#x27;\n  - Element: div contains text: &amp;#x27;$ Currency&amp;#x27;\n  - Element: div contains text: &amp;#x27;123456789\nMy Account\nWish List (0) Shopping Cart Checkout&amp;#x27;\n  - Element: div contains text: &amp;#x27;My Account&amp;#x27;\n  - Element: div contains text: &amp;#x27;0 item(s) - $0.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;0 item(s) - $0.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;0 item(s) - $0.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;0 item(s) - $0.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Desktops\nLaptops &amp;amp; Notebooks\nComponents\nTablets\nSoftware\nPhones &amp;amp; PDAs\nCameras\nMP3 Players&amp;#x27;\n  - Element: div contains text: &amp;#x27;Desktops\nLaptops &amp;amp; Notebooks\nComponents\nTablets\nSoftware\nPhones &amp;amp; PDAs\nCameras\nMP3 Players&amp;#x27;\n  - Element: div contains text: &amp;#x27;Featured\nMacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00\niPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00\nApple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00\nCanon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Featured\nMacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00\niPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00\nApple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00\nCanon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Featured\nMacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00\niPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00\nApple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00\nCanon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;MacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00\niPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00\nApple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00\nCanon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;MacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;MacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;MacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;MacBook\nIntel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n$602.00\nEx Tax: $500.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;$602.00\nEx Tax: $500.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;iPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;iPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;iPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;iPhone\niPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n$123.20\nEx Tax: $101.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;$123.20\nEx Tax: $101.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Apple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Apple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Apple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Apple Cinema 30&amp;quot;\nThe 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..\n$110.00 $122.00\nEx Tax: $90.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;$110.00 $122.00\nEx Tax: $90.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Canon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Canon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Canon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Canon EOS 5D\nCanon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..\n$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;$98.00 $122.00\nEx Tax: $80.00&amp;#x27;\n  - Element: div contains text: &amp;#x27;Information\nTerms &amp;amp; Conditions\nDelivery Information\nAbout Us\nPrivacy Policy\nCustomer Service\nContact Us\nReturns\nSite Map\nExtras\nBrands\nGift Certificates\nAffiliate\nSpecials\nMy Account\nMy Account\nOrder History\nWish List\nNewsletter\nPowered By OpenCart\nYour Store \u00a9 2024&amp;#x27;\n  - Element: div contains text: &amp;#x27;Information\nTerms &amp;amp; Conditions\nDelivery Information\nAbout Us\nPrivacy Policy\nCustomer Service\nContact Us\nReturns\nSite Map\nExtras\nBrands\nGift Certificates\nAffiliate\nSpecials\nMy Account\nMy Account\nOrder History\nWish List\nNewsletter&amp;#x27;\n  - Element: div contains text: &amp;#x27;Information\nTerms &amp;amp; Conditions\nDelivery Information\nAbout Us\nPrivacy Policy&amp;#x27;\n  - Element: div contains text: &amp;#x27;Customer Service\nContact Us\nReturns\nSite Map&amp;#x27;\n  - Element: div contains text: &amp;#x27;Extras\nBrands\nGift Certificates\nAffiliate\nSpecials&amp;#x27;\n  - Element: div contains text: &amp;#x27;My Account\nMy Account\nOrder History\nWish List\nNewsletter&amp;#x27;\n\nChecking elements for selector: span\n  - Element: span contains text: &amp;#x27;Currency&amp;#x27;\n  - Element: span contains text: &amp;#x27;123456789&amp;#x27;\n  - Element: span contains text: &amp;#x27;My Account&amp;#x27;\n  - Element: span contains text: &amp;#x27;Wish List (0)&amp;#x27;\n  - Element: span contains text: &amp;#x27;Shopping Cart&amp;#x27;\n  - Element: span contains text: &amp;#x27;Checkout&amp;#x27;\n  - Element: span contains text: &amp;#x27;$602.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;Ex Tax: $500.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;$123.20&amp;#x27;\n  - Element: span contains text: &amp;#x27;Ex Tax: $101.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;$110.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;$122.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;Ex Tax: $90.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;$98.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;$122.00&amp;#x27;\n  - Element: span contains text: &amp;#x27;Ex Tax: $80.00&amp;#x27;\n\nChecking elements for selector: p\n  - Element: p contains text: &amp;#x27;Intel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..&amp;#x27;\n  - Element: p contains text: &amp;#x27;iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..&amp;#x27;\n  - Element: p contains text: &amp;#x27;The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed speci..&amp;#x27;\n  - Element: p contains text: &amp;#x27;Canon&amp;#x27;s press material for the EOS 5D states that it &amp;#x27;defines (a) new D-SLR category&amp;#x27;, while we&amp;#x27;re n..&amp;#x27;\n  - Element: p contains text: &amp;#x27;Powered By OpenCart\nYour Store \u00a9 2024&amp;#x27;\n\nChecking elements for selector: .widget-class\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[320-480]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[320-480]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[320-480]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 320x480\n\nTh\u1eddi gian t\u1ea3i trang: 0.50 gi\u00e2y\n\nHeader Height: 153\nFooter Height: 635\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 3058\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 341\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 3410\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 3058\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[480-800]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[480-800]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[480-800]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 480x800\n\nTh\u1eddi gian t\u1ea3i trang: 0.62 gi\u00e2y\n\nHeader Height: 153\nFooter Height: 635\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 3058\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 661\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6610\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 3058\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[600-1024]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[600-1024]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[600-1024]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 600x1024\n\nTh\u1eddi gian t\u1ea3i trang: 0.57 gi\u00e2y\n\nHeader Height: 153\nFooter Height: 296\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1895\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 687\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6870\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1895\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[768-1280]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[768-1280]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[768-1280]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 768x1280\n\nTh\u1eddi gian t\u1ea3i trang: 0.50 gi\u00e2y\n\nHeader Height: 56\nFooter Height: 255\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1880\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 687\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6870\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1880\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[1366-768]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[1366-768]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[1366-768]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 1366x768\n\nTh\u1eddi gian t\u1ea3i trang: 0.28 gi\u00e2y\n\nHeader Height: 56\nFooter Height: 255\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1547\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 629\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6290\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1547\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[1920-1080]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[1920-1080]&#34;, &#34;duration&#34;: &#34;00:00:08&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[1920-1080]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:08&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 1920x1080\n\nTh\u1eddi gian t\u1ea3i trang: 0.57 gi\u00e2y\n\nHeader Height: 56\nFooter Height: 255\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1557\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 687\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6870\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1557\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[2560-1440]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[2560-1440]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[2560-1440]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 2560x1440\n\nTh\u1eddi gian t\u1ea3i trang: 0.51 gi\u00e2y\n\nHeader Height: 56\nFooter Height: 255\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1557\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 687\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6870\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1557\n&#34;}], &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[3840-2160]&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_7_responsive_design.py::test_check_ui_on_large_screen[3840-2160]&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_7_responsive_design.py::test_check_ui_on_large_screen[3840-2160]&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\n\nKi\u1ec3m tra v\u1edbi \u0111\u1ed9 ph\u00e2n gi\u1ea3i: 3840x2160\n\nTh\u1eddi gian t\u1ea3i trang: 0.57 gi\u00e2y\n\nHeader Height: 56\nFooter Height: 255\nS\u1ed1 l\u01b0\u1ee3ng ph\u1ea7n t\u1eed ch\u00ednh t\u00ecm th\u1ea5y: 5\nChi\u1ec1u cao trang: 1557\nChi\u1ec1u cao c\u1eeda s\u1ed5 tr\u00ecnh duy\u1ec7t: 687\nGi\u1edbi h\u1ea1n chi\u1ec1u cao cho ph\u00e9p: 6870\nTrang c\u00f3 thanh cu\u1ed9n, cu\u1ed9n xu\u1ed1ng...\nChi\u1ec1u cao trang sau khi cu\u1ed9n: 1557\n&#34;}], &#34;test_all_links_status_report.py::test_all_links&#34;: [{&#34;extras&#34;: [], &#34;result&#34;: &#34;Passed&#34;, &#34;testId&#34;: &#34;test_all_links_status_report.py::test_all_links&#34;, &#34;duration&#34;: &#34;00:00:07&#34;, &#34;resultsTableRow&#34;: [&#34;&lt;td class=\&#34;col-result\&#34;&gt;Passed&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-testId\&#34;&gt;test_all_links_status_report.py::test_all_links&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-duration\&#34;&gt;00:00:07&lt;/td&gt;&#34;, &#34;&lt;td class=\&#34;col-links\&#34;&gt;&lt;/td&gt;&#34;], &#34;log&#34;: &#34;----------------------------- Captured stdout call -----------------------------\n\nLink Status Report:\nhttp://localhost/demo/# --&amp;gt; OK\nhttp://localhost/demo/EUR --&amp;gt; Skipped (404 Not Found)\nhttp://localhost/demo/GBP --&amp;gt; Skipped (404 Not Found)\nhttp://localhost/demo/USD --&amp;gt; Skipped (404 Not Found)\nhttp://localhost/demo/index.php?route=information/contact&amp;amp;language=en-gb --&amp;gt; OK\nNo href --&amp;gt; Invalid link\nhttp://localhost/demo/index.php?route=account/register&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/login&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/wishlist&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=checkout/cart&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=checkout/checkout&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=common/home&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=20 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=20_26 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=20_27 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=20 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=18 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=18_46 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=18_45 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=18 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25_29 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25_28 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25_30 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25_31 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25_32 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=25 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=57 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=17 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=24 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=33 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_43 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_44 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_47 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_48 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_49 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_50 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_51 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_52 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_53 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_54 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_55 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_56 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_38 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_37 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_39 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_40 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_41 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34_42 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/category&amp;amp;language=en-gb&amp;amp;path=34 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;path=57&amp;amp;product_id=49 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=43 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=43 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=40 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=40 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=42 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=42 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=30 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/product&amp;amp;language=en-gb&amp;amp;product_id=30 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/information&amp;amp;language=en-gb&amp;amp;information_id=2 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/information&amp;amp;language=en-gb&amp;amp;information_id=4 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/information&amp;amp;language=en-gb&amp;amp;information_id=1 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/information&amp;amp;language=en-gb&amp;amp;information_id=3 --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/contact&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/returns.add&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=information/sitemap&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/manufacturer&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=checkout/voucher&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/affiliate&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=product/special&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/account&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/order&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/wishlist&amp;amp;language=en-gb --&amp;gt; OK\nhttp://localhost/demo/index.php?route=account/newsletter&amp;amp;language=en-gb --&amp;gt; OK\nhttps://www.opencart.com/ --&amp;gt; Skipped (403 Forbidden)\n&#34;}]}, &#34;renderCollapsed&#34;: [&#34;passed&#34;], &#34;initialSort&#34;: &#34;result&#34;, &#34;title&#34;: &#34;report.html&#34;}"></div>
+    <script>
+      (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+const { getCollapsedCategory, setCollapsedIds } = require('./storage.js')
+
+class DataManager {
+    setManager(data) {
+        const collapsedCategories = [...getCollapsedCategory(data.renderCollapsed)]
+        const collapsedIds = []
+        const tests = Object.values(data.tests).flat().map((test, index) => {
+            const collapsed = collapsedCategories.includes(test.result.toLowerCase())
+            const id = `test_${index}`
+            if (collapsed) {
+                collapsedIds.push(id)
+            }
+            return {
+                ...test,
+                id,
+                collapsed,
+            }
+        })
+        const dataBlob = { ...data, tests }
+        this.data = { ...dataBlob }
+        this.renderData = { ...dataBlob }
+        setCollapsedIds(collapsedIds)
+    }
+
+    get allData() {
+        return { ...this.data }
+    }
+
+    resetRender() {
+        this.renderData = { ...this.data }
+    }
+
+    setRender(data) {
+        this.renderData.tests = [...data]
+    }
+
+    toggleCollapsedItem(id) {
+        this.renderData.tests = this.renderData.tests.map((test) =>
+            test.id === id ? { ...test, collapsed: !test.collapsed } : test,
+        )
+    }
+
+    set allCollapsed(collapsed) {
+        this.renderData = { ...this.renderData, tests: [...this.renderData.tests.map((test) => (
+            { ...test, collapsed }
+        ))] }
+    }
+
+    get testSubset() {
+        return [...this.renderData.tests]
+    }
+
+    get environment() {
+        return this.renderData.environment
+    }
+
+    get initialSort() {
+        return this.data.initialSort
+    }
+}
+
+module.exports = {
+    manager: new DataManager(),
+}
+
+},{"./storage.js":8}],2:[function(require,module,exports){
+const mediaViewer = require('./mediaviewer.js')
+const templateEnvRow = document.getElementById('template_environment_row')
+const templateResult = document.getElementById('template_results-table__tbody')
+
+function htmlToElements(html) {
+    const temp = document.createElement('template')
+    temp.innerHTML = html
+    return temp.content.childNodes
+}
+
+const find = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return elem.querySelector(selector)
+}
+
+const findAll = (selector, elem) => {
+    if (!elem) {
+        elem = document
+    }
+    return [...elem.querySelectorAll(selector)]
+}
+
+const dom = {
+    getStaticRow: (key, value) => {
+        const envRow = templateEnvRow.content.cloneNode(true)
+        const isObj = typeof value === 'object' && value !== null
+        const values = isObj ? Object.keys(value).map((k) => `${k}: ${value[k]}`) : null
+
+        const valuesElement = htmlToElements(
+            values ? `<ul>${values.map((val) => `<li>${val}</li>`).join('')}<ul>` : `<div>${value}</div>`)[0]
+        const td = findAll('td', envRow)
+        td[0].textContent = key
+        td[1].appendChild(valuesElement)
+
+        return envRow
+    },
+    getResultTBody: ({ testId, id, log, extras, resultsTableRow, tableHtml, result, collapsed }) => {
+        const resultBody = templateResult.content.cloneNode(true)
+        resultBody.querySelector('tbody').classList.add(result.toLowerCase())
+        resultBody.querySelector('tbody').id = testId
+        resultBody.querySelector('.collapsible').dataset.id = id
+
+        resultsTableRow.forEach((html) => {
+            const t = document.createElement('template')
+            t.innerHTML = html
+            resultBody.querySelector('.collapsible').appendChild(t.content)
+        })
+
+        if (log) {
+            // Wrap lines starting with "E" with span.error to color those lines red
+            const wrappedLog = log.replace(/^E.*$/gm, (match) => `<span class="error">${match}</span>`)
+            resultBody.querySelector('.log').innerHTML = wrappedLog
+        } else {
+            resultBody.querySelector('.log').remove()
+        }
+
+        if (collapsed) {
+            resultBody.querySelector('.collapsible > td')?.classList.add('collapsed')
+            resultBody.querySelector('.extras-row').classList.add('hidden')
+        } else {
+            resultBody.querySelector('.collapsible > td')?.classList.remove('collapsed')
+        }
+
+        const media = []
+        extras?.forEach(({ name, format_type, content }) => {
+            if (['image', 'video'].includes(format_type)) {
+                media.push({ path: content, name, format_type })
+            }
+
+            if (format_type === 'html') {
+                resultBody.querySelector('.extraHTML').insertAdjacentHTML('beforeend', `<div>${content}</div>`)
+            }
+        })
+        mediaViewer.setup(resultBody, media)
+
+        // Add custom html from the pytest_html_results_table_html hook
+        tableHtml?.forEach((item) => {
+            resultBody.querySelector('td[class="extra"]').insertAdjacentHTML('beforeend', item)
+        })
+
+        return resultBody
+    },
+}
+
+module.exports = {
+    dom,
+    htmlToElements,
+    find,
+    findAll,
+}
+
+},{"./mediaviewer.js":6}],3:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const storageModule = require('./storage.js')
+
+const getFilteredSubSet = (filter) =>
+    manager.allData.tests.filter(({ result }) => filter.includes(result.toLowerCase()))
+
+const doInitFilter = () => {
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+}
+
+const doFilter = (type, show) => {
+    if (show) {
+        storageModule.showCategory(type)
+    } else {
+        storageModule.hideCategory(type)
+    }
+
+    const currentFilter = storageModule.getVisible()
+    const filteredSubset = getFilteredSubSet(currentFilter)
+    manager.setRender(filteredSubset)
+
+    const sortColumn = storageModule.getSort()
+    doSort(sortColumn, true)
+}
+
+module.exports = {
+    doFilter,
+    doInitFilter,
+}
+
+},{"./datamanager.js":1,"./sort.js":7,"./storage.js":8}],4:[function(require,module,exports){
+const { redraw, bindEvents, renderStatic } = require('./main.js')
+const { doInitFilter } = require('./filter.js')
+const { doInitSort } = require('./sort.js')
+const { manager } = require('./datamanager.js')
+const data = JSON.parse(document.getElementById('data-container').dataset.jsonblob)
+
+function init() {
+    manager.setManager(data)
+    doInitFilter()
+    doInitSort()
+    renderStatic()
+    redraw()
+    bindEvents()
+}
+
+init()
+
+},{"./datamanager.js":1,"./filter.js":3,"./main.js":5,"./sort.js":7}],5:[function(require,module,exports){
+const { dom, find, findAll } = require('./dom.js')
+const { manager } = require('./datamanager.js')
+const { doSort } = require('./sort.js')
+const { doFilter } = require('./filter.js')
+const {
+    getVisible,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    getSortDirection,
+    possibleFilters,
+} = require('./storage.js')
+
+const removeChildren = (node) => {
+    while (node.firstChild) {
+        node.removeChild(node.firstChild)
+    }
+}
+
+const renderStatic = () => {
+    const renderEnvironmentTable = () => {
+        const environment = manager.environment
+        const rows = Object.keys(environment).map((key) => dom.getStaticRow(key, environment[key]))
+        const table = document.getElementById('environment')
+        removeChildren(table)
+        rows.forEach((row) => table.appendChild(row))
+    }
+    renderEnvironmentTable()
+}
+
+const addItemToggleListener = (elem) => {
+    elem.addEventListener('click', ({ target }) => {
+        const id = target.parentElement.dataset.id
+        manager.toggleCollapsedItem(id)
+
+        const collapsedIds = getCollapsedIds()
+        if (collapsedIds.includes(id)) {
+            const updated = collapsedIds.filter((item) => item !== id)
+            setCollapsedIds(updated)
+        } else {
+            collapsedIds.push(id)
+            setCollapsedIds(collapsedIds)
+        }
+        redraw()
+    })
+}
+
+const renderContent = (tests) => {
+    const sortAttr = getSort(manager.initialSort)
+    const sortAsc = JSON.parse(getSortDirection())
+    const rows = tests.map(dom.getResultTBody)
+    const table = document.getElementById('results-table')
+    const tableHeader = document.getElementById('results-table-head')
+
+    const newTable = document.createElement('table')
+    newTable.id = 'results-table'
+
+    // remove all sorting classes and set the relevant
+    findAll('.sortable', tableHeader).forEach((elem) => elem.classList.remove('asc', 'desc'))
+    tableHeader.querySelector(`.sortable[data-column-type="${sortAttr}"]`)?.classList.add(sortAsc ? 'desc' : 'asc')
+    newTable.appendChild(tableHeader)
+
+    if (!rows.length) {
+        const emptyTable = document.getElementById('template_results-table__body--empty').content.cloneNode(true)
+        newTable.appendChild(emptyTable)
+    } else {
+        rows.forEach((row) => {
+            if (!!row) {
+                findAll('.collapsible td:not(.col-links', row).forEach(addItemToggleListener)
+                find('.logexpander', row).addEventListener('click',
+                    (evt) => evt.target.parentNode.classList.toggle('expanded'),
+                )
+                newTable.appendChild(row)
+            }
+        })
+    }
+
+    table.replaceWith(newTable)
+}
+
+const renderDerived = () => {
+    const currentFilter = getVisible()
+    possibleFilters.forEach((result) => {
+        const input = document.querySelector(`input[data-test-result="${result}"]`)
+        input.checked = currentFilter.includes(result)
+    })
+}
+
+const bindEvents = () => {
+    const filterColumn = (evt) => {
+        const { target: element } = evt
+        const { testResult } = element.dataset
+
+        doFilter(testResult, element.checked)
+        const collapsedIds = getCollapsedIds()
+        const updated = manager.renderData.tests.map((test) => {
+            return {
+                ...test,
+                collapsed: collapsedIds.includes(test.id),
+            }
+        })
+        manager.setRender(updated)
+        redraw()
+    }
+
+    const header = document.getElementById('environment-header')
+    header.addEventListener('click', () => {
+        const table = document.getElementById('environment')
+        table.classList.toggle('hidden')
+        header.classList.toggle('collapsed')
+    })
+
+    findAll('input[name="filter_checkbox"]').forEach((elem) => {
+        elem.addEventListener('click', filterColumn)
+    })
+
+    findAll('.sortable').forEach((elem) => {
+        elem.addEventListener('click', (evt) => {
+            const { target: element } = evt
+            const { columnType } = element.dataset
+            doSort(columnType)
+            redraw()
+        })
+    })
+
+    document.getElementById('show_all_details').addEventListener('click', () => {
+        manager.allCollapsed = false
+        setCollapsedIds([])
+        redraw()
+    })
+    document.getElementById('hide_all_details').addEventListener('click', () => {
+        manager.allCollapsed = true
+        const allIds = manager.renderData.tests.map((test) => test.id)
+        setCollapsedIds(allIds)
+        redraw()
+    })
+}
+
+const redraw = () => {
+    const { testSubset } = manager
+
+    renderContent(testSubset)
+    renderDerived()
+}
+
+module.exports = {
+    redraw,
+    bindEvents,
+    renderStatic,
+}
+
+},{"./datamanager.js":1,"./dom.js":2,"./filter.js":3,"./sort.js":7,"./storage.js":8}],6:[function(require,module,exports){
+class MediaViewer {
+    constructor(assets) {
+        this.assets = assets
+        this.index = 0
+    }
+
+    nextActive() {
+        this.index = this.index === this.assets.length - 1 ? 0 : this.index + 1
+        return [this.activeFile, this.index]
+    }
+
+    prevActive() {
+        this.index = this.index === 0 ? this.assets.length - 1 : this.index -1
+        return [this.activeFile, this.index]
+    }
+
+    get currentIndex() {
+        return this.index
+    }
+
+    get activeFile() {
+        return this.assets[this.index]
+    }
+}
+
+
+const setup = (resultBody, assets) => {
+    if (!assets.length) {
+        resultBody.querySelector('.media').classList.add('hidden')
+        return
+    }
+
+    const mediaViewer = new MediaViewer(assets)
+    const container = resultBody.querySelector('.media-container')
+    const leftArrow = resultBody.querySelector('.media-container__nav--left')
+    const rightArrow = resultBody.querySelector('.media-container__nav--right')
+    const mediaName = resultBody.querySelector('.media__name')
+    const counter = resultBody.querySelector('.media__counter')
+    const imageEl = resultBody.querySelector('img')
+    const sourceEl = resultBody.querySelector('source')
+    const videoEl = resultBody.querySelector('video')
+
+    const setImg = (media, index) => {
+        if (media?.format_type === 'image') {
+            imageEl.src = media.path
+
+            imageEl.classList.remove('hidden')
+            videoEl.classList.add('hidden')
+        } else if (media?.format_type === 'video') {
+            sourceEl.src = media.path
+
+            videoEl.classList.remove('hidden')
+            imageEl.classList.add('hidden')
+        }
+
+        mediaName.innerText = media?.name
+        counter.innerText = `${index + 1} / ${assets.length}`
+    }
+    setImg(mediaViewer.activeFile, mediaViewer.currentIndex)
+
+    const moveLeft = () => {
+        const [media, index] = mediaViewer.prevActive()
+        setImg(media, index)
+    }
+    const doRight = () => {
+        const [media, index] = mediaViewer.nextActive()
+        setImg(media, index)
+    }
+    const openImg = () => {
+        window.open(mediaViewer.activeFile.path, '_blank')
+    }
+    if (assets.length === 1) {
+        container.classList.add('media-container--fullscreen')
+    } else {
+        leftArrow.addEventListener('click', moveLeft)
+        rightArrow.addEventListener('click', doRight)
+    }
+    imageEl.addEventListener('click', openImg)
+}
+
+module.exports = {
+    setup,
+}
+
+},{}],7:[function(require,module,exports){
+const { manager } = require('./datamanager.js')
+const storageModule = require('./storage.js')
+
+const genericSort = (list, key, ascending, customOrder) => {
+    let sorted
+    if (customOrder) {
+        sorted = list.sort((a, b) => {
+            const aValue = a.result.toLowerCase()
+            const bValue = b.result.toLowerCase()
+
+            const aIndex = customOrder.findIndex((item) => item.toLowerCase() === aValue)
+            const bIndex = customOrder.findIndex((item) => item.toLowerCase() === bValue)
+
+            // Compare the indices to determine the sort order
+            return aIndex - bIndex
+        })
+    } else {
+        sorted = list.sort((a, b) => a[key] === b[key] ? 0 : a[key] > b[key] ? 1 : -1)
+    }
+
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const durationSort = (list, ascending) => {
+    const parseDuration = (duration) => {
+        if (duration.includes(':')) {
+            // If it's in the format "HH:mm:ss"
+            const [hours, minutes, seconds] = duration.split(':').map(Number)
+            return (hours * 3600 + minutes * 60 + seconds) * 1000
+        } else {
+            // If it's in the format "nnn ms"
+            return parseInt(duration)
+        }
+    }
+    const sorted = list.sort((a, b) => parseDuration(a['duration']) - parseDuration(b['duration']))
+    if (ascending) {
+        sorted.reverse()
+    }
+    return sorted
+}
+
+const doInitSort = () => {
+    const type = storageModule.getSort(manager.initialSort)
+    const ascending = storageModule.getSortDirection()
+    const list = manager.testSubset
+    const initialOrder = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed', 'Skipped', 'Passed']
+
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    if (type?.toLowerCase() === 'original') {
+        manager.setRender(list)
+    } else {
+        let sortedList
+        switch (type) {
+        case 'duration':
+            sortedList = durationSort(list, ascending)
+            break
+        case 'result':
+            sortedList = genericSort(list, type, ascending, initialOrder)
+            break
+        default:
+            sortedList = genericSort(list, type, ascending)
+            break
+        }
+        manager.setRender(sortedList)
+    }
+}
+
+const doSort = (type, skipDirection) => {
+    const newSortType = storageModule.getSort(manager.initialSort) !== type
+    const currentAsc = storageModule.getSortDirection()
+    let ascending
+    if (skipDirection) {
+        ascending = currentAsc
+    } else {
+        ascending = newSortType ? false : !currentAsc
+    }
+    storageModule.setSort(type)
+    storageModule.setSortDirection(ascending)
+
+    const list = manager.testSubset
+    const sortedList = type === 'duration' ? durationSort(list, ascending) : genericSort(list, type, ascending)
+    manager.setRender(sortedList)
+}
+
+module.exports = {
+    doInitSort,
+    doSort,
+}
+
+},{"./datamanager.js":1,"./storage.js":8}],8:[function(require,module,exports){
+const possibleFilters = [
+    'passed',
+    'skipped',
+    'failed',
+    'error',
+    'xfailed',
+    'xpassed',
+    'rerun',
+]
+
+const getVisible = () => {
+    const url = new URL(window.location.href)
+    const settings = new URLSearchParams(url.search).get('visible')
+    const lower = (item) => {
+        const lowerItem = item.toLowerCase()
+        if (possibleFilters.includes(lowerItem)) {
+            return lowerItem
+        }
+        return null
+    }
+    return settings === null ?
+        possibleFilters :
+        [...new Set(settings?.split(',').map(lower).filter((item) => item))]
+}
+
+const hideCategory = (categoryToHide) => {
+    const url = new URL(window.location.href)
+    const visibleParams = new URLSearchParams(url.search).get('visible')
+    const currentVisible = visibleParams ? visibleParams.split(',') : [...possibleFilters]
+    const settings = [...new Set(currentVisible)].filter((f) => f !== categoryToHide).join(',')
+
+    url.searchParams.set('visible', settings)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const showCategory = (categoryToShow) => {
+    if (typeof window === 'undefined') {
+        return
+    }
+    const url = new URL(window.location.href)
+    const currentVisible = new URLSearchParams(url.search).get('visible')?.split(',').filter(Boolean) ||
+        [...possibleFilters]
+    const settings = [...new Set([categoryToShow, ...currentVisible])]
+    const noFilter = possibleFilters.length === settings.length || !settings.length
+
+    noFilter ? url.searchParams.delete('visible') : url.searchParams.set('visible', settings.join(','))
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getSort = (initialSort) => {
+    const url = new URL(window.location.href)
+    let sort = new URLSearchParams(url.search).get('sort')
+    if (!sort) {
+        sort = initialSort || 'result'
+    }
+    return sort
+}
+
+const setSort = (type) => {
+    const url = new URL(window.location.href)
+    url.searchParams.set('sort', type)
+    window.history.pushState({}, null, unescape(url.href))
+}
+
+const getCollapsedCategory = (renderCollapsed) => {
+    let categories
+    if (typeof window !== 'undefined') {
+        const url = new URL(window.location.href)
+        const collapsedItems = new URLSearchParams(url.search).get('collapsed')
+        switch (true) {
+        case !renderCollapsed && collapsedItems === null:
+            categories = ['passed']
+            break
+        case collapsedItems?.length === 0 || /^["']{2}$/.test(collapsedItems):
+            categories = []
+            break
+        case /^all$/.test(collapsedItems) || collapsedItems === null && /^all$/.test(renderCollapsed):
+            categories = [...possibleFilters]
+            break
+        default:
+            categories = collapsedItems?.split(',').map((item) => item.toLowerCase()) || renderCollapsed
+            break
+        }
+    } else {
+        categories = []
+    }
+    return categories
+}
+
+const getSortDirection = () => JSON.parse(sessionStorage.getItem('sortAsc')) || false
+const setSortDirection = (ascending) => sessionStorage.setItem('sortAsc', ascending)
+
+const getCollapsedIds = () => JSON.parse(sessionStorage.getItem('collapsedIds')) || []
+const setCollapsedIds = (list) => sessionStorage.setItem('collapsedIds', JSON.stringify(list))
+
+module.exports = {
+    getVisible,
+    hideCategory,
+    showCategory,
+    getCollapsedIds,
+    setCollapsedIds,
+    getSort,
+    setSort,
+    getSortDirection,
+    setSortDirection,
+    getCollapsedCategory,
+    possibleFilters,
+}
+
+},{}]},{},[4]);
+    </script>
+  </footer>
+</html>
