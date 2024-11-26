@@ -430,9 +430,14 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
             EC.element_to_be_clickable((By.ID, "input-shipping-address"))
         )
         shipping_address_dropdown.click()
+
+        time.sleep(1)
+
         shipping_address_option = chrome_driver.find_element(By.XPATH, "//option[@value='1']")
         shipping_address_option.click()
         print("Selected shipping address.")
+
+        time.sleep(1)
 
         # Wait for success message
         WebDriverWait(chrome_driver, 10).until(
@@ -453,6 +458,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         choose_button.click()
         print("Clicked the 'Choose' button for shipping method.")
 
+        time.sleep(1)
+
         # Optionally wait for confirmation or success message (if any)
         WebDriverWait(chrome_driver, 10).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
@@ -467,6 +474,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         shipping_method_radio_button.click()
         print("Selected shipping method.")
 
+        time.sleep(1)
+
         # Wait for the 'Continue' button to be clickable
         continue_button = WebDriverWait(chrome_driver, 10).until(
             EC.element_to_be_clickable((By.ID, "button-shipping-method"))
@@ -474,6 +483,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         # Click the 'Continue' button
         continue_button.click()
         print("Clicked the 'Continue' button for shipping method.")
+
+        time.sleep(1)
 
         # Optionally, wait for a confirmation or success message that the shipping method has been applied
         WebDriverWait(chrome_driver, 10).until(
@@ -495,6 +506,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         choose_payment_button.click()
         print("Clicked the 'Choose' button for payment method.")
 
+        time.sleep(1)
+
         # Optionally wait for confirmation or success message (if any)
         WebDriverWait(chrome_driver, 10).until(
             EC.visibility_of_element_located((By.CSS_SELECTOR, ".alert.alert-success"))
@@ -509,6 +522,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         payment_method_radio_button.click()
         print("Selected payment method.")
 
+        time.sleep(1)
+
         # Wait for the 'Continue' button to be clickable
         continue_payment_button = WebDriverWait(chrome_driver, 10).until(
             EC.element_to_be_clickable((By.ID, "button-payment-method"))
@@ -516,6 +531,8 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
         # Click the 'Continue' button
         continue_payment_button.click()
         print("Clicked the 'Continue' button for payment method.")
+
+        time.sleep(1)
 
         # Optionally, wait for a confirmation or success message that the payment method has been applied
         WebDriverWait(chrome_driver, 10).until(
@@ -530,16 +547,16 @@ def test_navigate_to_checkout_and_complete_order(chrome_driver):
 
     # Step 5: Add Comments About Your Order
     try:
-        time.sleep(2)
-
         comment_field = WebDriverWait(chrome_driver, 10).until(
             EC.element_to_be_clickable((By.ID, "input-comment"))
         )
 
         chrome_driver.execute_script("arguments[0].scrollIntoView(true);", comment_field)
-
+        time.sleep(1)
         comment_field.send_keys("Please double-check the item before shipping. Thanks!")
         print("Comment added successfully.")
+
+        time.sleep(2)
 
     except Exception as e:
         print(f"Error while adding comment: {e}")
