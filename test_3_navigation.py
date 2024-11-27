@@ -78,15 +78,27 @@ def test_navigate_to_random_product_detail_chrome(chrome_driver):
 
     # List of product selectors for MacBook, iPhone, Apple Cinema, and Canon EOS 5D
     product_selectors = [
-        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=42']",  # iPhone
-        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=43']",  # MacBook
-        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=44']",  # Apple Cinema
-        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=45']"   # Canon EOS 5D
+        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=42']",
+        # iPhone
+        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=43']",
+        # MacBook
+        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=44']",
+        # Apple Cinema
+        "//div[@class='image']/a[@href='http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=45']"
+        # Canon EOS 5D
     ]
 
     # Randomly select a product selector from the list
     selected_product_selector = random.choice(product_selectors)
-    selected_product = chrome_driver.find_element(By.XPATH, selected_product_selector)
+
+    # Wait for the product to be visible and interactable
+    try:
+        selected_product = WebDriverWait(chrome_driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, selected_product_selector))
+        )
+    except Exception as e:
+        print(f"Error: {e}")
+        assert False, "Failed to locate the product on the homepage."
 
     # Scroll to the selected product to make sure it's in view
     ActionChains(chrome_driver).move_to_element(selected_product).perform()
@@ -103,7 +115,7 @@ def test_navigate_to_random_product_detail_chrome(chrome_driver):
         "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=42",  # iPhone
         "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=43",  # MacBook
         "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=44",  # Apple Cinema
-        "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=45"   # Canon EOS 5D
+        "http://localhost/demo/index.php?route=product/product&language=en-gb&product_id=45"  # Canon EOS 5D
     ], f"Unexpected product detail page URL: {chrome_driver.current_url}"
 
     print("Successfully navigated to the correct product detail page.")
